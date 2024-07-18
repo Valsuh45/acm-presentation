@@ -1,0 +1,26 @@
+{
+  "name": "parent-presentation",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build-for-gh": "vite build --base=/gis-presentation"
+  },
+  "devDependencies": {
+    "@types/reveal.js": "^5.0.3",
+    "gh-pages": "^6.1.1",
+    "sass": "^1.77.8",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.4"
+  },
+  "dependencies": {
+    "mermaid": "^10.9.1",
+    "reveal.js": "^5.1.0",
+    "reveal.js-mermaid-plugin": "^2.3.0"
+  }
+}
