@@ -1,7 +1,14 @@
-section > section > img {
+section>section>img {
   height: 12vw;
 }
 
 img[alt="adorsys-logo"] {
   width: 25vw;
+}
+
+img[alt="@-logo"] {
+  width: 70px;
+  height: auto;
+  margin-left: 2px;
+  margin-top: 2px
 }
