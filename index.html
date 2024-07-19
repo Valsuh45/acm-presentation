@@ -23,10 +23,10 @@
                 <h2>Assiduity</h2>
                 <h3>Attendance Records</h3>
                 <img src="src/assets/images/assiduity.svg" alt="Assiduity">
-                <p>Record of no unexcused absences</p>
+                <p>No Record of unexcused absences</p>
             </section>
             <section>
-                <h3><span class="pc">Participation in Classes</span></h3>
+                <h3>Participation in Classes</h3>
                 <img src="src/assets/images/participation.svg" alt="Participation">
                 <p>Active involvement in discussions</p>
                 <p>Engaging with peers and instructors</p>
@@ -50,7 +50,6 @@
         <section>
             <section>
                 <h2>Work</h2>
-                <h3>Assignments Completed</h3>
                 <img src="src/assets/images/assigntment_completed.svg" alt="Assignments">
                 <p>Homework assignments</p>
                 <p>Group projects</p>
@@ -76,9 +75,17 @@
         <section>
             <section>
                 <h2>Progress</h2>
+                <div class="mermaid">
+                    graph TD;
+                    A[Skills Improvement]
+                    B[Knowledge Gained]
+                    C[Behavioral Changes]
+                    D[Projects]
+                </div>
+            </section>
+            <section>
                 <h3>Skills Improvement</h3>
                 <img src="src/assets/images/Skills_Improvement.svg" alt="Skills">
-                <p>Enhanced reading and writing skills</p>
                 <p>Improved problem-solving abilities</p>
             </section>
             <section>
@@ -93,12 +100,85 @@
                 <p>Increased responsibility</p>
                 <p>Better teamwork and cooperation</p>
             </section>
+            <section>
+                <h3>Projects</h3>
+                <div class="mermaid">
+                    graph LR;
+                    A[All] --> F
+                    A --> H
+                    A --> J
+                    A --> L
+                    A --> M
+                    F[DataSafe, XS2A & Quac 02.24] --> G[Wazuh OP 07.24]
+                    H[Keycloak 03.24] --> I[Datev Wallet 06.24]
+                    J[Rust 05.24] --> K[DidComm 05.24]
+                    L[CloudFoundry / Terraform 06.24]
+                    M[Lynx Scanner 03.24]
+                </div>
+            </section>
+            <section>
+                <h3>Project Timeline</h3>
+                <div class="mermaid">
+                    timeline
+
+                    section February 2024
+                    DataSafe, XS2A & Quac: 02.24
+
+                    section March 2024
+                    Keycloak: 03.24
+                    Lynx Scanner: 03.24
+
+                    section May 2024
+                    Rust: 05.24
+                    DidComm: 05.24
+
+                    section June 2024
+                    Datev Wallet: 06.24
+                    CloudFoundry / Terraform: 06.24
+
+                    section July 2024
+                    Wazuh OP: 07.24
+                </div>
+            </section>
+            <section>
+                <h3>Management Tasks</h3>
+                <div class="mermaid">
+                    graph TD;
+                    A["Project Management"] --> N[Applications Management]
+                    A --> O[Group Management]
+                    A --> P[Document Management]
+                </div>
+            </section>
         </section>
 
         <!-- Certifications -->
         <section>
             <section>
                 <h2>Certifications</h2>
+                <ul>
+                    <li>LPIC System Admin</li>
+                    <li>Java Certified Oracle Fundamentals</li>
+                    <li>JavaScript OpenEDG Essential</li>
+                    <li>Stripe Professional Cert</li>
+                    <li>LPIC DevOps Tool Eng Cert</li>
+                    <li>...</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Certifications</h2>
+                <div class="mermaid">
+                    graph TD;
+                    B[JavaScript OpenEDG Essential] --> D[LPIC DevOps Tool Eng Cert]
+                    C[Java Certified Oracle Fundamentals] --> D
+                    B --> E[Stripe Professional Cert]
+                    A[LPIC System Admin] --> B
+                    A --> C
+                    C --> E
+                    E --> F[...]
+                    D --> G[...]
+                </div>
+            </section>
+            <section>
                 <h3>LPIC 10X</h3>
                 <img src="src/assets/images/lpic.svg" alt="LPIC">
                 <p>Linux Professional Institute Certification</p>
@@ -125,23 +205,31 @@
         <!-- Challenges Overcome -->
         <section>
             <section>
-                <h2>Challenges Overcome</h2>
-                <h3>Difficulties Faced</h3>
+                <h2>Challenges</h2>
                 <img src="src/assets/images/challenges.svg" alt="Challenges">
                 <p>Academic challenges</p>
-                <p>Personal and social hurdles</p>
+                <p>Environmental challenges</p>
+                <p>Social challenges</p>
             </section>
             <section>
                 <h3>Solutions Found</h3>
                 <img src="src/assets/images/solutions.svg" alt="Solutions">
-                <p>Tutoring and extra help</p>
-                <p>Peer support and mentoring</p>
+                <ul>
+                    <li>Different Student learning curve</li>
+                    <li>New city, new weather</li>
+                    <li>New people – new culture</li>
+                    <li>Arguing a lot?</li>
+                </ul>
             </section>
             <section>
                 <h3>Lessons Learned</h3>
                 <img src="src/assets/images/lessons_learned.svg" alt="Lessons">
-                <p>Perseverance and resilience</p>
-                <p>Problem-solving techniques</p>
+                <ul>
+                    <li>Perseverance and resilience</li>
+                    <li>Problem-solving techniques</li>
+                    <li>Personalized training for each</li>
+                    <li>...</li>
+                </ul>
             </section>
         </section>
 
@@ -149,7 +237,6 @@
         <section>
             <section>
                 <h2>Future Steps</h2>
-                <h3>Goals for the Future</h3>
                 <img src="src/assets/images/future_steps.svg" alt="Goals">
                 <p>Academic aspirations</p>
                 <p>Career ambitions</p>
@@ -157,86 +244,39 @@
             <section>
                 <h3>Areas for Improvement</h3>
                 <img src="src/assets/images/areas_of_improvement.svg" alt="Improvement">
-                <p>Subjects needing more focus</p>
-                <p>Personal development areas</p>
+                <div class="mermaid">
+                    graph LR;
+                    A[Improvement Areas] --> B[Finances]
+                    A --> C[Continuous Learning]
+                    A --> D[Discipline]
+                </div>
             </section>
             <section>
                 <h3>Plans for Continuous Learning</h3>
                 <img src="src/assets/images/continues_learning.svg" alt="Learning">
-                <p>Enrolling in advanced courses</p>
-                <p>Participating in workshops and seminars</p>
+                <p>Studying at UdM</p>
+                <p>Workshops at adorsys GmbH</p>
             </section>
         </section>
 
         <!-- Conclusion -->
         <section>
-            <section>
+            <section data-auto-animate>
                 <h2>Conclusion</h2>
-                <h3>Summary of the Training Journey</h3>
+                <h3>Thank you!</h3>
                 <img src="src/assets/images/conclusion.svg" alt="Summary">
                 <p>Overview of the progress made</p>
                 <p>Highlights of memorable moments</p>
             </section>
-            <section>
-                <h3>Appreciation for Efforts and Dedication</h3>
-                <img src="src/assets/images/appreciation.svg" alt="Appreciation">
-                <p>Acknowledging hard work</p>
-                <p>Thanking parents and teachers</p>
-            </section>
-            <section>
-                <h3>Encouragement for the Future</h3>
+            <section data-auto-animate>
+                <h3>Thank you!</h3>
                 <img src="src/assets/images/encouragement.svg" alt="Encouragement">
-                <p>Motivating words for future endeavors</p>
-                <p>Final thoughts and good wishes</p>
+                <aside class="notes">
+                    <p>Motivating words for future endeavors</p>
+                    <p>Final thoughts and good wishes</p>
+                </aside>
                 <p>Thank you for your attention. We are proud of each child's journey and look forward to their future
                     successes.</p>
-            </section>
-        </section>
-
-        <!-- Training Path Overview -->
-        <section>
-            <section>
-                <h2>Training Path Overview</h2>
-                <h3>Initial Exams</h3>
-                <div class="mermaid">
-                    graph TD;
-                    A[LPIC 101 & 102 Exam] -->|50%| B[JavaScript OpenEDG Essential]
-                    A -->|50%| C[Java Certified Oracle Fundamentals]
-                </div>
-            </section>
-            <section>
-                <h3>Next Steps</h3>
-                <div class="mermaid">
-                    graph TD;
-                    B[JavaScript OpenEDG Essential] --> D[LPIC DevOps Tool Eng Cert]
-                    C[Java Certified Oracle Fundamentals] --> D
-                    B --> E[Stripe Professional Cert]
-                    C --> E
-                </div>
-            </section>
-            <section>
-                <h3>Projects Timeline</h3>
-                <div class="mermaid">
-                    graph TD;
-                    subgraph Projects
-                    F[DataSafe, XS2A & Quac 02.24] --> G[Wazuh OP 07.24]
-                    H[Keycloak 03.24] --> I[Datev Wallet 06.24]
-                    J[Rust 05.24] --> K[DidComm 05.24]
-                    L[CloudFoundry / Terraform 06.24]
-                    M[Lynx Scanner 03.24]
-                    end
-                </div>
-            </section>
-            <section>
-                <h3>Management Tasks</h3>
-                <div class="mermaid">
-                    graph TD;
-                    subgraph Management
-                    N[Applications Management]
-                    O[Group Management]
-                    P[Document Management]
-                    end
-                </div>
             </section>
         </section>
     </div>

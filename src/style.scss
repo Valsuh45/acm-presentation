@@ -1,14 +1,22 @@
-section>section>img {
-  height: 12vw;
+section {
+  section {
+    img {
+      height: 12vw;
+    }
+  }
 }
 
-img[alt="adorsys-logo"] {
-  width: 25vw;
-}
+img {
+  $logo-margin: 24px;
 
-img[alt="@-logo"] {
-  width: 70px;
-  height: auto;
-  margin-left: 2px;
-  margin-top: 2px
+  &[alt="adorsys-logo"] {
+    width: 25vw;
+  }
+
+  &[alt="@-logo"] {
+    width: 70px;
+    height: auto;
+    margin-left: $logo-margin;
+    margin-top: $logo-margin;
+  }
 }
