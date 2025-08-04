@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/gis-presentation/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Code as a Graph - Neo4j Presentation</title>
+  <script type="module" crossorigin src="/gis-presentation/assets/index-690JMyAI.js"></script>
+  <link rel="stylesheet" crossorigin href="/gis-presentation/assets/index-D_SosjQq.css">
+</head>
+<body>
+<div class="reveal">
+    <img src="data:image/svg+xml,%3csvg%20width='270'%20height='270'%20viewBox='0%200%20270%20270'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M0%200H270V270H8C3.58173%20270%200%20266.418%200%20262V0Z'%20fill='%232F2CF9'/%3e%3cg%20clip-path='url(%23clip0_3199_5734)'%3e%3cpath%20d='M173.564%2089.3809C171.966%2089.3809%20170.165%2089.4138%20168.156%2089.451C163.385%2089.5397%20157.45%2089.6499%20150.249%2089.3809H124.137C124.026%2089.3809%20123.925%2089.3895%20123.789%2089.4038C117.229%2089.5784%20115.853%2093.5267%20115.853%2096.8097V101.066C115.853%20104.512%20117.327%20108.619%20124.349%20108.619H150.608C169.132%20108.619%20174.135%20108.595%20174.135%20124.422H105.81C93.3812%20124.422%2085.278%20126.784%2080.3897%20131.467C80.351%20131.504%2080.3086%20131.539%2080.2704%20131.576C75.9693%20135.773%2074.2058%20141.806%2074.2046%20149.652L74.1765%20153.339C74.1765%20153.339%2074.1765%20153.339%2074.1765%20153.34L74.1745%20153.608C74.1745%20165.762%2080.7509%20180.238%20112.084%20180.238H155.996C181.966%20180.238%20195.135%20170.858%20195.135%20152.36V107.154C195.135%2098.0175%20184.651%2089.3809%20173.564%2089.3809ZM171.405%20158.026C169.82%20159.424%20165.885%20161.091%20156.142%20161.091H111.997C108.533%20161.091%20105.751%20161.062%20103.542%20160.854C103.153%20160.818%20102.782%20160.775%20102.428%20160.726C101.546%20160.605%20100.772%20160.443%20100.096%20160.229C99.7534%20160.12%2099.4362%20159.998%2099.1428%20159.861C99.0168%20159.802%2098.8951%20159.74%2098.7778%20159.675C98.3557%20159.442%2097.9865%20159.173%2097.6732%20158.858C96.8618%20158.041%2096.4008%20156.927%2096.2156%20155.408C96.1503%20154.874%2096.1181%20154.291%2096.1181%20153.651V150.334C96.1181%20149.221%2096.1215%20148.129%2096.6378%20147.165C97.6767%20145.226%20100.808%20143.807%20110.23%20143.785H110.232C110.304%20143.785%20110.371%20143.784%20110.444%20143.784H174.203L174.216%20147.753C174.216%20152.974%20173.276%20156.424%20171.405%20158.026Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_3199_5734'%3e%3crect%20width='120.96'%20height='90.8567'%20fill='white'%20transform='translate(74.1745%2089.3809)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="@-logo" class="logo">
+    <div class="slides">
+        <!-- Title Slide -->
+        <section>
+            <img src="/gis-presentation/assets/adorsys-DOSCBOU9.png" alt="adorsys-logo">
+            <h2>Code as a Graph: Visualizing Software with Neo4j</h2>
+            <p>Exploring how graph databases can revolutionize code analysis and visualization</p>
+            <p><small>Powered by Neo4j Graph Database Technology</small></p><br>
+            <p><small>Presented by <b>Valantine Suh</b><br>
+                Associate Full Stack Engineer at adorsys</small></p>
+        </section>
+
+        <!-- Introduction -->
+        <section>
+            <section>
+                <h2>Introduction</h2>
+                <p>Traditional approaches to code analysis are limited by linear thinking</p>
+                <p>Graph databases provide a new way to visualize and query code relationships, so today, we'll explore how Neo4j can transform code into a graph</p>
+            </section>
+            <section>
+                <h3>Agenda</h3>
+                <ul>
+                    <li>Why Graph Databases for Code?</li>
+                    <li>What are Graph Databases?</li>
+                    <li>What is Neo4j?</li>
+                    <li>Our Use Case: Indexing GitHub Repositories</li>
+                    <li>Demo: Visualizing Code as a Graph</li>
+                    <li>Benefits & Challenges</li>
+                    <li>Conclusion</li>
+                    <li>Q&A</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2>Visualizing Code as a Graph</h2>
+            <p>Software systems are inherently interconnected - like graphs!</p>
+            <div class="mermaid">
+                graph TD;
+                A[Traditional Analysis] ---> B[Limited Views]
+                C[Graph-Based Analysis] ---> D[Rich Relationships]
+                    C ---> E[Pattern Discovery]
+                    C ---> F[Impact Analysis]
+                </div>
+            </section>
+            <section>
+                <h3>Why Graph Databases for Code?</h3>
+                <ul>
+                    <li>Code has natural relationships: imports, dependencies, inheritance</li>
+                    <li>Traditional databases struggle with complex interconnections</li>
+                    <li>Graph databases excel at traversing relationships</li>
+                    <li>Enable powerful queries across the entire codebase</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- What are Graph Databases -->
+        <section>
+            <section>
+                <h2>What are Graph Databases?</h2>
+                <p>These are databases that use graph structures with nodes, edges, and properties to represent and store data.</p>
+                <br>
+                <div class="mermaid">
+                    graph LR;
+                    A[Node: Class] -->|EXTENDS| B[Node: Parent Class]
+                    A -->|IMPLEMENTS| C[Node: Interface]
+                    A -->|USES| D[Node: Library]
+                    B -->|CONTAINS| E[Node: Method]
+                </div>
+            </section>
+            <section>
+                <h3>Core Components</h3>
+                <ul>
+                    <li><strong>Nodes:</strong> Entities (Classes, Methods, Files)</li>
+                    <li><strong>Relationships:</strong> Connections between entities</li>
+                    <li><strong>Properties:</strong> Key-value pairs storing data</li>
+                    <li><strong>Labels:</strong> Categorizing nodes by type</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Graph vs Relational</h3>
+                <div class="mermaid">
+                    graph TD;
+                    subgraph "Relational Database"
+                    T1[Table: Classes]
+                    T2[Table: Methods]
+                    T3[Table: Dependencies]
+                    T1 -.-> T2
+                    T2 -.-> T3
+                    end
+                    
+                    subgraph "Graph Database"
+                    N1[Class Node] -->|HAS_METHOD| N2[Method Node]
+                    N1 -->|DEPENDS_ON| N3[Library Node]
+                    N2 -->|CALLS| N4[Method Node]
+                    end
+                </div>
+            </section>
+        </section>
+
+        <!-- Neo4j Database -->
+        <section>
+            <section>
+                <h2>What is Neo4j?</h2>
+                <img src="/gis-presentation/assets/neo4j-logo-BBVyQN6u.png" alt="Neo4j"><br>
+                <p>
+                    Neo4j is a native graphical database, which implements a true graph model all the way down to the
+                    core level, instead of using a graph abstraction on top of another technology.
+                </p>
+            </section>
+            <section>
+                <h3>Key Characteristics</h3>
+                <ul>
+                    <li>Native graph storage and processing</li>
+                    <li>ACID (Atomicity, Consistency, Isolation, Durability) compliant</li>
+                    <li>Cypher query language</li>
+                    <li>Highly scalable and performant</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Cypher Query Language</h3>
+                <p>SQL-like syntax for graph queries</p>
+                <pre><code>
+MATCH (class:Class)-[:HAS_METHOD]->(method:Method)
+WHERE class.name = "UserService"
+RETURN method.name, method.complexity
+                </code></pre>
+                <p>Human-readable pattern matching</p>
+            </section>
+            <section>
+                <h3>Performance Benefits</h3>
+                <ul>
+                    <li><strong>Index-free adjacency:</strong> Relationships are stored as pointers</li>
+                    <li><strong>Pattern matching:</strong> Optimized for complex queries</li>
+                    <li><strong>Memory efficiency:</strong> Only loads relevant subgraphs</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Use Case: GitHub Repo Indexing -->
+        <section>
+            <section>
+                <h2>Our Use Case</h2>
+                <h4>"Indexing Code Repositories into Neo4j"</h4><br>
+                <p>Transform code repositories into queryable graph structures</p>
+            </section>
+            <section>
+                <h3>What We Index</h3>
+                <div class="mermaid">
+                    graph TD;
+                    A[Code] --> B[Files]
+                    A --> C[Directories]
+                    B --> D[Classes]
+                    B --> E[Functions/Methods]
+                    B --> F[Variables]
+                    D --> G[Dependencies]
+                    E --> H[Function Calls]
+                    D --> I[Inheritance]
+                </div>
+            </section>
+            <section>
+                <h3>Relationship Types</h3>
+                <ul>
+                    <li><strong>CONTAINS:</strong> Directory contains files</li>
+                    <li><strong>DEFINES:</strong> File defines classes/functions</li>
+                    <li><strong>EXTENDS:</strong> Class inheritance</li>
+                    <li><strong>IMPLEMENTS:</strong> Interface implementation</li>
+                    <li><strong>CALLS:</strong> Function/method invocations</li>
+                    <li><strong>IMPORTS:</strong> Module dependencies</li>
+                    <li><strong>USES:</strong> Variable/resource usage</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Sample Queries</h3>
+                <h6><small> Find all classes that depend on a specific library: </small></h6>
+                <pre><code>
+MATCH (lib:Library {name: "express"})&lt;-[:IMPORTS]-(file:File)-[:DEFINES]-&gt;(class:Class)
+RETURN class.name, file.path
+                </code></pre><br>
+
+
+                <h6><small>Detect circular dependencies:</small></h6>
+                <pre><code>
+            MATCH path = (a:Class)-[:DEPENDS_ON*]->(a)
+            WHERE length(path) > 1
+            RETURN path
+                </code></pre>
+            </section>
+        </section>
+
+        <!-- Demo Section -->
+        <section>
+            <section>
+                <h2>Demo Time!</h2>
+            </section>
+            <section>
+                <h3>Demo Highlights</h3>
+                <ul>
+                    <li>Import a sample code</li>
+                    <li>Visualize the code structure as a graph</li>
+                    <li>Run complex queries to analyze dependencies</li>
+                    <li>Identify potential refactoring opportunities</li>
+                    <li>Show impact analysis for proposed changes</li>
+                </ul>
+            </section>
+            <section>
+                <h3>What You'll See</h3>
+                <div class="mermaid">
+                    graph LR;
+                    A[Code Files] ---> B[Parsed AST]
+                    B ---> C[Graph Nodes & Relations]
+                    C ---> D[Neo4j Browser]
+                    D ---> E[Visual Graph]
+                    D ---> F[Query Results]
+                </div>
+            </section>
+        </section>
+
+        <!-- Benefits & Challenges -->
+        <section>
+            <section>
+                <h2>Benefits & Use Cases</h2>
+                <ul>
+                    <li><strong>Code Reviews:</strong> Better understanding of change impact</li>
+                    <li><strong>Refactoring:</strong> Safe restructuring with dependency awareness</li>
+                    <li><strong>Onboarding:</strong> Help new developers understand codebase</li>
+                    <li><strong>Technical Debt:</strong> Identify problematic areas</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Challenges & Considerations</h3>
+                <ul>
+                    <li><strong>Parsing Complexity:</strong> Different languages, different structures</li>
+                    <li><strong>Scale:</strong> Large code bases require optimization</li>
+                    <li><strong>Maintenance:</strong> Keeping graph synchronized with code changes</li>
+                    <li><strong>Infrastructure:</strong> Neo4j deployment and management</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Q&A -->
+        <section>
+            <section>
+                <h2>Questions & Answers</h2>
+                <p>Let's discuss your thoughts and explore possibilities!</p>
+            </section>
+            <section>
+                <h3>Common Questions</h3>
+                <ul>
+                    <li>How does this compare to static analysis tools?</li>
+                    <li>What's the performance impact on large codebases?</li>
+                    <li>Can this integrate with existing CI/CD pipelines?</li>
+                    <li>What programming languages are supported?</li>
+                    <li>How do we handle dynamically typed languages?</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- Conclusion -->
+        <section>
+            <section data-auto-animate>
+                <h2>Conclusion</h2>
+                <p>Graph databases open new possibilities for code analysis and visualization</p>
+                   Neo4j provides powerful tools for understanding software architecture leading to ease
+                   of implementation and maintenance.</p>
+            </section>
+            <section data-auto-animate>
+                <h2>Useful Links</h2>
+                <p>
+                Graph databases open new possibilities for code analysis, below are the links to relevant resources and repositories
+                </p>
+                <ul>
+                    <li><a href="https://github.com/vymalo/code-graph">Tailored Code Graph Repo</a></li>
+                    <li><a href="https://www.npmjs.com/package/@vymalo/code-graph-analyzer">NPM Code Graph Analyzer Package</a></li>
+                    <li><a href="https://github.com/ChrisRoyse/CodeGraph">CodeGraph Repo</a></li>
+                    <li><a href="https://github.com/Valsuh45/codegraph-cli-agent">Code Graph CLI Agent</a></li>
+                    <li><a href="https://neo4j.com/docs/">Neo4j Documentation</a></li>
+                    <li><a href="https://neo4j.com/developer/">Neo4j Developer Resources</a></li>
+                    <li><a href="https://github.com/Valsuh45/acm-presentation">Presentation Slides</a></li>
+                </ul>
+            </section>
+            <section data-auto-animate>
+                <h3>Thank you!</h3>
+                <aside class="notes">
+                    <p>Neo4j makes complex code relationships simple to understand and query</p>
+                </aside>
+                <p> Remember: Software is a graph - let's treat it as one! <br>
+                    Ready to start visualizing your code as a graph?
+                </p>
+                <p><small><b><u>Contact: info.cm@adorsys.com</u></b></small></p>
+            </section>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
