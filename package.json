@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build-for-gh": "vite build --base=/gis-presentation"
+    "build-for-gh": "vite build --base=/acm-presentation"
   },
   "devDependencies": {
     "@types/reveal.js": "^5.0.3",
